@@ -25,4 +25,4 @@
 
 #sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 
-svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
+sed -i '1i src-git openclash https://github.com/vernesong/openclash' feeds.conf.default
