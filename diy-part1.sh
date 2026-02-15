@@ -18,7 +18,9 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
 # Add ADGuardHome source
-git clone https://github.com/JohnnyDu0815/luci-app-adguardhome package/luci-app-adguardhome
-chmod -R 755 ./package/luci-app-adguardhome/*
+#git clone https://github.com/JohnnyDu0815/luci-app-adguardhome package/luci-app-adguardhome
+#chmod -R 755 ./package/luci-app-adguardhome/*
 
 #git clone https://github.com/vernesong/OpenClash.git package/OpenClash
+
+ sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
