@@ -37,3 +37,10 @@ config rule
         option proto 'udp'
         option target 'ACCEPT'
 EOF
+
+# 1. 找出所有在 Makefile 里定义了依赖 rust 的包并强制删除它们
+find feeds/ -name Makefile -exec grep -l "DEPENDS:=.*rust" {} + | xargs rm -rf
+
+# 2. 彻底屏蔽 Rust 相关的配置条目
+sed -i 's/CONFIG_PACKAGE_rust=y/# CONFIG_PACKAGE_rust is not set/g' .config
+sed -i 's/CONFIG_PACKAGE_librsvg=y/# CONFIG_PACKAGE_librsvg is not set/g' .config
