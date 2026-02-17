@@ -37,5 +37,3 @@ config rule
         option proto 'udp'
         option target 'ACCEPT'
 EOF
-
-sed -i 's/ci-llvm=true/ci-llvm=false/g' feeds/packages/lang/rust/Makefile
