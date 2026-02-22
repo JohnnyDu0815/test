@@ -70,7 +70,6 @@ jobs:
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
-
      ## 强制默认编译内核   
      sed -i "s/KERNEL_PATCHVER:=*.*/KERNEL_PATCHVER:=6.12/g" target/linux/mediatek/Makefile
      sed -i "s/KERNEL_PATCHVER=*.*/KERNEL_PATCHVER=6.12/g" target/linux/mediatek/Makefile            
