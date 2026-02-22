@@ -50,3 +50,8 @@ config rule
         option proto 'udp'
         option target 'ACCEPT'
 EOF
+
+## 强制默认编译内核   
+        sed -i "s/KERNEL_PATCHVER:=*.*/KERNEL_PATCHVER:=6.12/g" target/linux/mediatek/Makefile
+        sed -i "s/KERNEL_PATCHVER=*.*/KERNEL_PATCHVER=6.12/g" target/linux/mediatek/Makefile            
+        sed -i "s/DISTRIB_DESCRIPTION='*.*'/DISTRIB_DESCRIPTION='TL-XDR6088-$(date +%Y%m%d)'/g" package/lean/default-settings/files/zzz-default-settings
